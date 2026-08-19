@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.openqa.selenium.chrome.ChromeOptions;
 import pages.LoginPage;
 
 public class E2EUserFlowTest {
@@ -19,8 +20,14 @@ public class E2EUserFlowTest {
         // 1. Connect to the Database
         DatabaseManager.connect();
 
-        // 2. Initialize Chrome Browser for Selenium
-        driver = new ChromeDriver();
+        // 2. Configure Chrome to run in Headless mode (required for Jenkins/CI-CD)
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new"); // Runs Chrome invisibly in the background
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+
+        // Initialize Chrome Browser with options
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 
