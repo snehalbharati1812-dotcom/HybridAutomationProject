@@ -1,3 +1,4 @@
-pages\LoginPage.class
+utils\ExtentReportManager.class
 api\ApiClient.class
 database\DatabaseManager.class
+pages\LoginPage.class
