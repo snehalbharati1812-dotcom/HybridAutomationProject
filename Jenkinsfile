@@ -11,10 +11,9 @@ pipeline {
 
         stage('Build and Run Tests') {
             steps {
-                // Replace 'mvn clean test' with whatever command you use to run your automation project
-                // (e.g., gradle test, pytest, npm test, etc.)
-                sh 'mvn clean test'
+                bat 'mvn clean test'
             }
+        }
         }
     }
 
