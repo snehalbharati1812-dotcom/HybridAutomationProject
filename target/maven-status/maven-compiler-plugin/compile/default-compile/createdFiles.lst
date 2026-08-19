@@ -1,0 +1,3 @@
+pages\LoginPage.class
+api\ApiClient.class
+database\DatabaseManager.class
